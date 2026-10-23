@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FB">
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:padding="20dp">
+
+  <!-- Profile Section -->
+  <ImageView
+      android:id="@+id/profileImage"
+      android:layout_width="135dp"
+      android:layout_height="120dp"
+      android:layout_gravity="center"
+      android:layout_marginTop="20dp"
+      android:src="@drawable/maria" />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="MARIA NAMUNYAK"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      android:textColor="#0A0909"
+      android:layout_marginTop="10dp"/>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="Diploma in ICT - Maasai National Polytechnic"
+      android:textColor="#666666"/>
+
+  <!-- Achievements Card -->
+  <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="25dp"
+      android:elevation="4dp">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:padding="15dp">
+
+    <TextView android:text="🏆 MY ACHIEVEMENTS" android:textStyle="bold" android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="1. Education:\n• KCSE Certificate - [ROMBO GIRLS LOITOKTOK]\n• Diploma in ICT (Ongoing) - Maasai National Poly\n• Certificate in Computer Packages\n\n2. Technical Skills:\n• Mobile App Development (Java/XML)\n• Website Design (HTML, CSS)\n• Networking (Straight &amp; Crossover Crimping)\n• MIS &amp; Database Management\n\n3. Awards &amp; Recognition:\n• Best ICT Student Project 2024\n• Community Volunteer - Kajiado Youth Tech Training\n• School Football Captain\n\n4. Projects Done:\n• MyCV App - Personal Portfolio App\n• Hospital MIS Case Study\n• Business Website for Local SME"/>
+   </LinearLayout>
+  </androidx.cardview.widget.CardView>
+
+  <!-- Buttons -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_marginTop="20dp"
+      tools:ignore="ExtraText">
+
+   <Button android:id="@+id/btnSkills" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="My Skills"/>
+   <Button android:id="@+id/btnContact" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Contact Me" android:layout_marginStart="10dp"/>
+
+   // Inside ContactActivity
+   Button btnCall = findViewById(R.id.btnCall);
+   btnCall.setOnClickListener(v -> {
+   Intent callIntent = new Intent(Intent.ACTION_DIAL);
+   callIntent.setData(Uri.parse("tel:0796707001"));
+   startActivity(callIntent);
+   });
+  </LinearLayout>
+ </LinearLayout>
+</ScrollView>
